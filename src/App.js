@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 import { useAuthentication } from './hooks/useAuthentication.js';
 
-import { AuthProvider } from './context/AuthContext.js';
+import { AuthProvider } from './contexts/AuthContext.js';
 
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
