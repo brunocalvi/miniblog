@@ -3,6 +3,7 @@
 }
 .post_detail img {
   max-width: 600px;
+  width: 100%;
 }
 .post_detail h2 {
   margin-bottom: .4em;  

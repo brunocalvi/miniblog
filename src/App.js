@@ -20,6 +20,7 @@ import CreatePost from './pages/CreatePost/CreatePost.jsx';
 import Dashboard from './pages/Dashboard/Dashboard.jsx';
 import Search from './pages/Search/Search.jsx';
 import Post from './pages/Post/Post.jsx';
+import EditPost from './pages/EditPost/EditPost.jsx';
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -51,19 +52,23 @@ function App() {
               <Route path='/posts/:id' element={<Post></Post>}></Route>
               <Route 
                 path='/login' 
-                element={ !user ? <Login></Login> :  <Navigate to='/'></Navigate> }
+                element={ !user ? <Login></Login> : <Navigate to='/'></Navigate> }
               ></Route>
               <Route 
                 path='/register' 
-                element={ !user ? <Register></Register> :  <Navigate to='/'></Navigate> }
+                element={ !user ? <Register></Register> : <Navigate to='/'></Navigate> }
+              ></Route>
+              <Route 
+                path='/posts/edit/:id' 
+                element={ user ? <EditPost></EditPost> : <Navigate to='/login'></Navigate> }
               ></Route>
               <Route 
                 path='/posts/create' 
-                element={ user ? <CreatePost></CreatePost> :  <Navigate to='/login'></Navigate> }
+                element={ user ? <CreatePost></CreatePost> : <Navigate to='/login'></Navigate> }
               ></Route>
               <Route 
                 path='/dashboard' 
-                element={ user ? <Dashboard></Dashboard> :  <Navigate to='/login'></Navigate> }
+                element={ user ? <Dashboard></Dashboard> : <Navigate to='/login'></Navigate> }
               ></Route>
             </Routes>
           </div>
